@@ -2,7 +2,7 @@ id,order_id,price_per_unit,quantity,product
 1,1,1.3454,10,Corrugated Box
 2,2,23.14,11,Corrugated Box
 3,3,123.0345,12,Corrugated Box
-4,4,,13,Corrugated Box
+4,4,123,13,Corrugated Box
 5,5,100,14,Corrugated Box
 6,6,1.5454,15,Corrugated Box
 7,7,25.14,16,Corrugated Box
@@ -10,7 +10,7 @@ id,order_id,price_per_unit,quantity,product
 9,9,13.456,18,Corrugated Box
 10,10,110,19,Corrugated Box
 11,1,45.2334,20,Hand sanitizer
-12,2,,21,Hand sanitizer
+12,2,321,21,Hand sanitizer
 13,3,273.1234,22,Hand sanitiZER
 14,4,11.45,23,Hand sanitizer
 15,5,12.467,24,Hand sanitizer
