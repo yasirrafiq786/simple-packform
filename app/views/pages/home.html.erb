@@ -1,2 +1,4 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Companies</h1>
+<% @companies.each do |company|%>
+    <h4><%=company.name %></h4>
+<% end%>

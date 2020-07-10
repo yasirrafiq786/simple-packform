@@ -7,4 +7,6 @@ class Customer < ApplicationRecord
   validates :password, presence: true
   validates :name, presence: true
   validates :credit_card, presence: true
+
+  
 end
