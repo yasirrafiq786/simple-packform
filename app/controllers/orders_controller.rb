@@ -1,10 +1,10 @@
 class OrdersController < ApplicationController
   def index
     if params[:query].present?
-      @orders = Order.where("order_name ILIKE ?", "%#{params[:query]}%")
+      @pagy, @orders = pagy(Order.where("order_name ILIKE ?", "%#{params[:query]}%"))
     else
-      @orders = Order.all
+      @pagy, @orders = pagy(Order.all)
     end
   end
-   
+  
 end

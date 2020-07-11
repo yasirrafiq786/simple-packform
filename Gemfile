@@ -32,6 +32,9 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 
+#paginaton
+gem 'pagy'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
