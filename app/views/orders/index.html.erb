@@ -1,0 +1,39 @@
+<div class="container p-3">
+  <div class="row">
+    <div class="col-12">
+      <%= form_tag root_path, method: :get, class: "form-inline" do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a order"
+      %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 my-4">
+      <p>Total amount:</p>
+      <table>
+        <tr>
+          <th>Order name</th>
+          <th>Customer Company</th>
+          <th>Customer name</th>
+          <th>Order date</th>
+          <th>Delivered amount</th>
+          <th>Total amount</th>
+        </tr>
+        <% @orders.each do |order|%>
+          <tr>
+            <td><%= order.order_name %></td>
+            <td><%= order.customer.company.name %></td>
+            <td><%= order.customer.name %></td>
+            <td><%= order.created_at.strftime("%b #{order.created_at.day.ordinalize}, %-l:%M %p") %></td>
+            <td>$<%= order.delivered_amount.round(2) %></td>
+            <td>$<%= order.total_amount.round(2) %></td>
+          </tr>
+        <% end%>
+      </table>
+    </div>
+  </div>
+</div>
