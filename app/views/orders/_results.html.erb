@@ -1,0 +1,24 @@
+<table>
+        <tr>
+          <th>Order name</th>
+          <th>Customer Company</th>
+          <th>Customer name</th>
+          <th>Order date</th>
+          <th>Delivered amount</th>
+          <th>Total amount</th>
+        </tr>
+        <% @orders.each do |order|%>
+          <tr>
+            <td><%= order.order_name %></td>
+            <td><%= order.customer.company.name %></td>
+            <td><%= order.customer.name %></td>
+            <td><%= order.created_at.strftime("%b #{order.created_at.day.ordinalize}, %-l:%M %p") %></td>
+            <% if order.deliveries.blank?%>
+              <td><%= "-----" %></td>
+            <% else%>
+              <td>$<%= order.delivered_amount.round(2) %></td>
+            <% end%>
+            <td>$<%= order.total_amount.round(2) %></td>
+          </tr>
+        <% end%>
+      </table>

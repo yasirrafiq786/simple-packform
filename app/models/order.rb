@@ -21,4 +21,10 @@ class Order < ApplicationRecord
     end
     total_amount.sum
   end
+
+  def search_by_dates(start_date, end_date)
+    s = start_date.to_datetime
+    e = end_date.to_datetime
+    (s..e).cover?(self.created_at)
+  end
 end
