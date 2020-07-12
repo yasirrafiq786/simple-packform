@@ -27,4 +27,6 @@ class Order < ApplicationRecord
     e = end_date.to_datetime
     (s..e).cover?(self.created_at)
   end
+
+  
 end

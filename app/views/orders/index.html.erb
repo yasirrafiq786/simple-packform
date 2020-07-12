@@ -1,24 +1,25 @@
+<div class="header">
+<%= link_to 'Home', root_path %>
 <h1 id="heading">PACKFORM CODE TEST</h1>
+</div>
 <div class="container p-3">
   <div class="row">
-    <div class="col-12">
-      <div id="search-form">
+    <div class="col-8">
+      
         <%= form_tag root_path, method: :get, class: "form-inline", remote: true do %>
-          <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a order"
-        %>
+          <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a order" %>
+          <%= date_field_tag :start_date, params[:start_date], class: "form-control" %>
+          <%= date_field_tag :end_date, params[:end_date], class: "form-control" %>
           <%= submit_tag "Search", class: "btn btn-primary", id: "search-btn" %>
         <% end %>
-      </div>
+      
     </div>
   </div>
+  
   <div class="row">
     <div class="col-12">
-      <p>Total amount:</p>
       <div id="results">
-      <%= render 'results' %>
+       <%= render 'results' %>
       </div>
       
     </div>
